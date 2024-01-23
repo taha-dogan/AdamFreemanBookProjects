@@ -1,0 +1,47 @@
+﻿@model IEnumerable<BookProjectTwo.Models.GuestResponse>
+@{
+    Layout = null;
+    int sayac = 1;
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+    <title>Hello World</title>
+</head>
+<body>
+    <div class="text-center p-2">
+        <h2>Here is the list of who attending the party</h2>
+
+        <table class="table table-bordered table-striped table-sm">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (BookProjectTwo.Models.GuestResponse res in Model)
+                {
+
+                    <tr>
+                        <td>@sayac</td>
+                        <td>@res.Name</td>
+                        <td>@res.Email</td>
+                        <td>@res.Phone</td>
+                    </tr>
+                    sayac++;
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
